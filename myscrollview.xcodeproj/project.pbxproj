@@ -15,6 +15,12 @@
 		D89AC7A31CDC2AAE00F8D5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89AC7A11CDC2AAE00F8D5BE /* LaunchScreen.storyboard */; };
 		D89AC7AE1CDC2AAE00F8D5BE /* myscrollviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D89AC7AD1CDC2AAE00F8D5BE /* myscrollviewTests.m */; };
 		D89AC7B91CDC2AAE00F8D5BE /* myscrollviewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D89AC7B81CDC2AAE00F8D5BE /* myscrollviewUITests.m */; };
+		D89AC7C91CDC2ECE00F8D5BE /* banner1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D89AC7C61CDC2ECE00F8D5BE /* banner1.jpg */; };
+		D89AC7CA1CDC2ECE00F8D5BE /* banner2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D89AC7C71CDC2ECE00F8D5BE /* banner2.jpg */; };
+		D89AC7CB1CDC2ECE00F8D5BE /* banner3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D89AC7C81CDC2ECE00F8D5BE /* banner3.jpg */; };
+		D89AC7D41CDC999E00F8D5BE /* myview.m in Sources */ = {isa = PBXBuildFile; fileRef = D89AC7D31CDC999E00F8D5BE /* myview.m */; };
+		D89AC7D81CDC9DA300F8D5BE /* pic_ad2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D89AC7D71CDC9DA300F8D5BE /* pic_ad2.jpg */; };
+		D89AC7DA1CDC9F6900F8D5BE /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D89AC7D91CDC9F6900F8D5BE /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,13 @@
 		D89AC7B41CDC2AAE00F8D5BE /* myscrollviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myscrollviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89AC7B81CDC2AAE00F8D5BE /* myscrollviewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myscrollviewUITests.m; sourceTree = "<group>"; };
 		D89AC7BA1CDC2AAE00F8D5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D89AC7C61CDC2ECE00F8D5BE /* banner1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner1.jpg; path = ../banner1.jpg; sourceTree = "<group>"; };
+		D89AC7C71CDC2ECE00F8D5BE /* banner2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner2.jpg; path = ../banner2.jpg; sourceTree = "<group>"; };
+		D89AC7C81CDC2ECE00F8D5BE /* banner3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner3.jpg; path = ../banner3.jpg; sourceTree = "<group>"; };
+		D89AC7D21CDC999E00F8D5BE /* myview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myview.h; sourceTree = "<group>"; };
+		D89AC7D31CDC999E00F8D5BE /* myview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myview.m; sourceTree = "<group>"; };
+		D89AC7D71CDC9DA300F8D5BE /* pic_ad2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_ad2.jpg; sourceTree = "<group>"; };
+		D89AC7D91CDC9F6900F8D5BE /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +118,7 @@
 				D89AC7971CDC2AAE00F8D5BE /* AppDelegate.m */,
 				D89AC7991CDC2AAE00F8D5BE /* ViewController.h */,
 				D89AC79A1CDC2AAE00F8D5BE /* ViewController.m */,
+				D89AC7DB1CDCA0C400F8D5BE /* myview */,
 				D89AC79C1CDC2AAE00F8D5BE /* Main.storyboard */,
 				D89AC79F1CDC2AAE00F8D5BE /* Assets.xcassets */,
 				D89AC7A11CDC2AAE00F8D5BE /* LaunchScreen.storyboard */,
@@ -117,6 +131,10 @@
 		D89AC7931CDC2AAE00F8D5BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D89AC7C61CDC2ECE00F8D5BE /* banner1.jpg */,
+				D89AC7C71CDC2ECE00F8D5BE /* banner2.jpg */,
+				D89AC7C81CDC2ECE00F8D5BE /* banner3.jpg */,
+				D89AC7D71CDC9DA300F8D5BE /* pic_ad2.jpg */,
 				D89AC7941CDC2AAE00F8D5BE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +156,16 @@
 				D89AC7BA1CDC2AAE00F8D5BE /* Info.plist */,
 			);
 			path = myscrollviewUITests;
+			sourceTree = "<group>";
+		};
+		D89AC7DB1CDCA0C400F8D5BE /* myview */ = {
+			isa = PBXGroup;
+			children = (
+				D89AC7D21CDC999E00F8D5BE /* myview.h */,
+				D89AC7D31CDC999E00F8D5BE /* myview.m */,
+				D89AC7D91CDC9F6900F8D5BE /* placeholder.png */,
+			);
+			name = myview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +274,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89AC7CA1CDC2ECE00F8D5BE /* banner2.jpg in Resources */,
+				D89AC7CB1CDC2ECE00F8D5BE /* banner3.jpg in Resources */,
 				D89AC7A31CDC2AAE00F8D5BE /* LaunchScreen.storyboard in Resources */,
+				D89AC7D81CDC9DA300F8D5BE /* pic_ad2.jpg in Resources */,
+				D89AC7C91CDC2ECE00F8D5BE /* banner1.jpg in Resources */,
+				D89AC7DA1CDC9F6900F8D5BE /* placeholder.png in Resources */,
 				D89AC7A01CDC2AAE00F8D5BE /* Assets.xcassets in Resources */,
 				D89AC79E1CDC2AAE00F8D5BE /* Main.storyboard in Resources */,
 			);
@@ -275,6 +308,7 @@
 			files = (
 				D89AC79B1CDC2AAE00F8D5BE /* ViewController.m in Sources */,
 				D89AC7981CDC2AAE00F8D5BE /* AppDelegate.m in Sources */,
+				D89AC7D41CDC999E00F8D5BE /* myview.m in Sources */,
 				D89AC7951CDC2AAE00F8D5BE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = myscrollview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhanghailu.myscrollview;
@@ -427,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = myscrollview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhanghailu.myscrollview;

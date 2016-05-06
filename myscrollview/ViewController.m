@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "myview.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<UIScrollViewDelegate>
+@property(nonatomic,strong) myview * mview;
 @end
 
 @implementation ViewController
@@ -17,7 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+   
+    
+    NSArray *array=@[[UIImage imageNamed:@"banner1.jpg"],[UIImage imageNamed:@"banner2.jpg"],[UIImage imageNamed:@"banner3.jpg"],[UIImage imageNamed:@"pic_ad2.jpg"]];
+    NSArray *array1=@[[UIImage imageNamed:@"banner1.jpg"]];
+    NSArray *array2=@[[UIImage imageNamed:@"banner1.jpg"],[UIImage imageNamed:@"banner2.jpg"]];
+   
+    self.mview=[[myview alloc]initWithFrame:CGRectMake(0, 24, [UIScreen mainScreen].bounds.size.width,120 ) imageArray:array];
+    [self.mview setPageColor:[UIColor whiteColor] andCurrentPageColor:[UIColor greenColor]];
+    
+    [self.view addSubview:self.mview];
+
+    
+    
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
