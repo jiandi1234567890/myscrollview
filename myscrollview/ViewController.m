@@ -26,7 +26,8 @@
    
     self.mview=[[myview alloc]initWithFrame:CGRectMake(0, 24, [UIScreen mainScreen].bounds.size.width,120 ) imageArray:array];
     [self.mview setPageColor:[UIColor whiteColor] andCurrentPageColor:[UIColor greenColor]];
-    [self.mview settime:3];
+    //[self.mview settime:3];
+    self.mview.ChangeMode=ChangeModeright;
     [self.view addSubview:self.mview];
 
     

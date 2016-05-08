@@ -187,7 +187,7 @@
       
         if(self.timer){[self stoptimer];}
         // 设置时钟动画 定时器
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.time<3?3:self.time target:self selector:@selector(update:) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.time<2?2:self.time target:self selector:@selector(update:) userInfo:nil repeats:YES];
         //  将定时器添加到主线程
         [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
         
@@ -224,13 +224,24 @@
     //定时移动
     
     CGPoint offSet = self.scrollView.contentOffset;
-    offSet.x +=offSet.x;
+    if(self.ChangeMode==ChangeModeright){
+    
+    offSet.x-=offSet.x;
     [self.scrollView setContentOffset:offSet animated:YES];
-    
-    if (offSet.x >= self.scrollView.frame.size.width *self.imageArray.count) {
-        offSet.x = self.scrollView.frame.size.width;
+    if(offSet.x<=0){
+        offSet.x=self.scrollView.frame.size.width;
     }
-    
+    }else{
+        
+            offSet.x +=offSet.x;
+            [self.scrollView setContentOffset:offSet animated:YES];
+        
+            if (offSet.x >= self.scrollView.frame.size.width *self.imageArray.count) {
+                offSet.x = self.scrollView.frame.size.width;
+            }
+
+        
+    }
 }
 
 
