@@ -15,5 +15,6 @@
 //设置pagecontroll颜色
 - (void)setPageColor:(UIColor *)color andCurrentPageColor:(UIColor *)currentColor;
 
-
+//设定定时时间,默认3秒
+-(void)settime:(CGFloat) time;
 @end

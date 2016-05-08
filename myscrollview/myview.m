@@ -15,6 +15,7 @@
 @property (nonatomic,strong)NSTimer *timer;                 //设置动画
 @property(nonatomic,strong) NSArray * imageArray;
 @property(nonatomic,strong) UIPageControl * pagecontrol;
+@property(nonatomic) CGFloat time;
 @end
 
 
@@ -140,17 +141,8 @@
             
         }
         
-        
-        
         [self setPageControlShow];
-        
-        // 设置时钟动画 定时器
-        
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
-        
-        //  将定时器添加到主线程
-        [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-        
+        [self starttimer];
         
     }
     return self;
@@ -158,12 +150,6 @@
 }
 + (instancetype)myscrollviewWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray{
     return [[self alloc] initWithFrame:frame imageArray:imageArray];
-    
-}
--(void)layoutSubviews{
-    
-    
-    
     
 }
 
@@ -192,6 +178,38 @@
 }
 
 
+//开启定时器
+-(void)starttimer{
+    
+    if(self.imageArray.count<=1){
+        return;
+    }else{
+      
+        if(self.timer){[self stoptimer];}
+        // 设置时钟动画 定时器
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.time<3?3:self.time target:self selector:@selector(update:) userInfo:nil repeats:YES];
+        //  将定时器添加到主线程
+        [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        
+    }
+    
+}
+//关闭定时器
+-(void)stoptimer{
+    [self.timer invalidate];
+    self.timer = nil;
+    
+}
+
+//设置定时器时间
+-(void)settime:(CGFloat)time{
+    
+      self.time=time;
+    [self starttimer];
+}
+
+
+//设置pagecontrol颜色
 - (void)setPageColor:(UIColor *)color andCurrentPageColor:(UIColor *)currentColor {
     self.pagecontrol.pageIndicatorTintColor = color;
     //  设置当前页码指示器的颜色
@@ -219,17 +237,13 @@
 #pragma mark - UIScrollViewDelegate
 //手动滑动时删除timer
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    [_timer invalidate];
-    _timer = nil;
+    [self stoptimer];
 }
 
 //重新启动timer
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
-    
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-    
+    [self starttimer];
 }
 
 
